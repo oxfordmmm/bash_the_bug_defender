@@ -3,8 +3,9 @@ extends Node2D
 signal hit
 signal died
 
-@export var health: int = 3
+@export var starting_health: int = 3
 @export var antibody_scene: PackedScene
+var health: int
 
 # y inverted for some reason
 var INPUT_DIR_MAPPING = {
@@ -18,10 +19,10 @@ var INPUT_DIR_MAPPING = {
 		"SW" : Vector2(-1, 1)
 	}
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
+func reset():
+	health = starting_health
+	$CollisionShape2D.set_deferred("disabled", false)
+	$AnimatedSprite2D.set("visible", true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -36,7 +37,8 @@ func fire_antibody(dir: Vector2) -> void:
 
 func die():
 	died.emit()
-	queue_free()
+	$CollisionShape2D.set_deferred("disabled", true)
+	$AnimatedSprite2D.set("visible", false)
 
 func take_dmg(amount: int):
 	health -= amount

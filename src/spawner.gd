@@ -35,6 +35,10 @@ func begin_spawning():
 	$SpawnTimer.start()
 	$AccelerationTimer.start()
 
+func stop_spawning():
+	$SpawnTimer.stop()
+	$AccelerationTimer.stop()
+
 func speed_up():
 	rate += spawn_acceleration
 	$SpawnTimer.wait_time = 1/rate

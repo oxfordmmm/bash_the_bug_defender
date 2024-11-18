@@ -49,6 +49,7 @@ max_roll = 1.0
 
 [node name="HUD" parent="." instance=ExtResource("6_lk3rk")]
 
+[connection signal="died" from="PlayerPos/Player" to="." method="end_game"]
 [connection signal="hit" from="PlayerPos/Player" to="Camera2D" method="add_trauma" binds= [5]]
 [connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="spawn"]
 [connection signal="timeout" from="Spawner/AccelerationTimer" to="Spawner" method="speed_up"]
