@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtgxh7y8kox2k"]
+
+[ext_resource type="Script" path="res://src/antibody.gd" id="1_v64yv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4i8y"]
+radius = 21.095
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_swpln"]
+load_path = "res://.godot/imported/antibody.png-dc1e459db6fb4bc81a0e132b5593444c.ctex"
+
+[node name="Antibody" type="Area2D" groups=["antibodies"]]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_v64yv")
+speed = 300
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_y4i8y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.820599, 0.339103, 0.967775, 1)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = SubResource("CompressedTexture2D_swpln")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwiqoaltmy5g3"]
+
+[ext_resource type="Script" path="res://src/player.gd" id="1_5woqo"]
+[ext_resource type="Texture2D" uid="uid://d23kx5diq65dy" path="res://art/animal_cell.png" id="1_sgv4v"]
+[ext_resource type="PackedScene" uid="uid://dtgxh7y8kox2k" path="res://scenes/antibody.tscn" id="2_dhreh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k02xw"]
+radius = 61.0082
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_25unl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sgv4v")
+}],
+"loop": true,
+"name": &"alive",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_5woqo")
+antibody_scene = ExtResource("2_dhreh")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k02xw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.04, 0.04)
+sprite_frames = SubResource("SpriteFrames_25unl")
+animation = &"alive"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

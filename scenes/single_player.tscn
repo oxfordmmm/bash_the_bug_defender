@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://duxnitjwi1jv0"]
+
+[ext_resource type="Script" path="res://src/spawner.gd" id="1_3kom3"]
+[ext_resource type="Script" path="res://src/controller_single_player.gd" id="1_e43ty"]
+[ext_resource type="PackedScene" uid="uid://dwiqoaltmy5g3" path="res://scenes/player.tscn" id="1_fs8nr"]
+[ext_resource type="PackedScene" uid="uid://54j05ytbw7vo" path="res://scenes/bug.tscn" id="4_uveui"]
+[ext_resource type="Script" path="res://src/ShakeCamera2d.gd" id="5_s3kjh"]
+[ext_resource type="PackedScene" uid="uid://bcdyopy1cqp4u" path="res://scenes/hud.tscn" id="6_lk3rk"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_e43ty")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -366.0
+offset_top = -320.0
+offset_right = 392.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.536796, 0.740239, 0.741104, 1)
+
+[node name="PlayerPos" type="Marker2D" parent="."]
+position = Vector2(320, 360)
+
+[node name="Player" parent="PlayerPos" instance=ExtResource("1_fs8nr")]
+
+[node name="Spawner" type="Node" parent="." node_paths=PackedStringArray("spawn_centre")]
+script = ExtResource("1_3kom3")
+spawn_centre = NodePath("../PlayerPos")
+spawn_distance = 350.0
+bug_scene = ExtResource("4_uveui")
+initial_rate = 0.6
+spawn_acceleration = 0.03
+
+[node name="SpawnTimer" type="Timer" parent="Spawner"]
+
+[node name="AccelerationTimer" type="Timer" parent="Spawner"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 360)
+ignore_rotation = false
+script = ExtResource("5_s3kjh")
+decay = 3.0
+max_offset = Vector2(75, 75)
+max_roll = 1.0
+
+[node name="HUD" parent="." instance=ExtResource("6_lk3rk")]
+
+[connection signal="hit" from="PlayerPos/Player" to="Camera2D" method="add_trauma" binds= [5]]
+[connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="spawn"]
+[connection signal="timeout" from="Spawner/AccelerationTimer" to="Spawner" method="speed_up"]
