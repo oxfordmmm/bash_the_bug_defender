@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://cx4lcgspflix2"]
+
+[ext_resource type="Script" path="res://src/antibiotic.gd" id="1_1iw3b"]
+[ext_resource type="Texture2D" uid="uid://bvjxmmvk8galv" path="res://art/inkscape/circle.svg" id="2_afipp"]
+[ext_resource type="Texture2D" uid="uid://dhpew4m0b5m3w" path="res://art/inkscape/square.svg" id="3_l5uwb"]
+[ext_resource type="Texture2D" uid="uid://cv1rrgcdrjmva" path="res://art/inkscape/star.svg" id="4_8mlew"]
+[ext_resource type="Texture2D" uid="uid://bvlfgxr20t7l5" path="res://art/inkscape/pill.svg" id="5_rsff0"]
+[ext_resource type="Texture2D" uid="uid://cfxnx64emkig0" path="res://art/inkscape/pill_internal_A.svg" id="6_jtxjj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ya2lg"]
+radius = 21.0
+height = 70.0
+
+[node name="Antibiotic" type="Area2D" groups=["antibiotics"]]
+scale = Vector2(0.8, 0.8)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_1iw3b")
+speed = 300
+colour_red = Color(1, 0.188235, 0, 1)
+colour_blue = Color(0.207843, 0.482353, 1, 1)
+colour_green = Color(0, 0.725175, 0, 1)
+icon_red = ExtResource("2_afipp")
+icon_blue = ExtResource("3_l5uwb")
+icon_green = ExtResource("4_8mlew")
+res_contribution = 0.04
+misuse_res_contribution = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["antibiotics"]]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_ya2lg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_rsff0")
+
+[node name="Cover" type="Sprite2D" parent="Sprite2D"]
+self_modulate = Color(0, 1, 1, 1)
+scale = Vector2(1, 1)
+texture = ExtResource("6_jtxjj")
+
+[node name="Symbol" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, 137.5)
+scale = Vector2(0.351779, 0.351779)
+texture = ExtResource("4_8mlew")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-9.53674e-07, 4.76837e-06)
+scale = Vector2(2.125, 3.625)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

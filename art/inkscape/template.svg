@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="678.89758"
+   height="678.89758"
+   viewBox="0 0 179.62499 179.62499"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="template.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:lockguides="false"
+     showguides="false"
+     inkscape:zoom="0.75871705"
+     inkscape:cx="312.36941"
+     inkscape:cy="230.65252"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="1912"
+     inkscape:window-y="-1"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g9923">
+    <sodipodi:guide
+       position="-45.125005,187.70832"
+       orientation="0,793.70079"
+       id="guide2474"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="164.875,187.70832"
+       orientation="1122.5197,0"
+       id="guide2476"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="164.875,-109.29168"
+       orientation="0,-793.70079"
+       id="guide2478"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-45.125005,-109.29168"
+       orientation="-1122.5197,0"
+       id="guide2480"
+       inkscape:locked="false" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid3571"
+       dotted="false"
+       originx="50.125001"
+       originy="87.166666" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect6842"
+       is_visible="true"
+       lpeversion="1"
+       pattern="M 0,4.9921384 C 0,2.236478 2.236478,0 4.9921384,0 c 2.7556603,0 4.9921383,2.236478 4.9921383,4.9921384 0,2.7556603 -2.236478,4.9921383 -4.9921383,4.9921383 C 2.236478,9.9842767 0,7.7477987 0,4.9921384 Z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       hide_knot="false"
+       fuse_tolerance="0" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-45.125005,-8.0833373)">
+    <g
+       id="g9923"
+       transform="matrix(2.6302758,0,0,2.6302758,-155.38153,-160.50321)" />
+  </g>
+</svg>

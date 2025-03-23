@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="805.35431"
+   height="805.35431"
+   viewBox="0 0 213.08334 213.08334"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="selector.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:lockguides="false"
+     showguides="false"
+     inkscape:zoom="0.75871705"
+     inkscape:cx="172.65989"
+     inkscape:cy="309.73338"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g9923">
+    <sodipodi:guide
+       position="-105.12502,281.16665"
+       orientation="0,793.70079"
+       id="guide2474"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="104.87499,281.16665"
+       orientation="1122.5197,0"
+       id="guide2476"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="104.87499,-15.83335"
+       orientation="0,-793.70079"
+       id="guide2478"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-105.12502,-15.83335"
+       orientation="-1122.5197,0"
+       id="guide2480"
+       inkscape:locked="false" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid3571"
+       dotted="false"
+       originx="-9.8750194"
+       originy="27.166679" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect6842"
+       is_visible="true"
+       lpeversion="1"
+       pattern="M 0,4.9921384 C 0,2.236478 2.236478,0 4.9921384,0 c 2.7556603,0 4.9921383,2.236478 4.9921383,4.9921384 0,2.7556603 -2.236478,4.9921383 -4.9921383,4.9921383 C 2.236478,9.9842767 0,7.7477987 0,4.9921384 Z"
+       copytype="single_stretched"
+       prop_scale="1"
+       scale_y_rel="false"
+       spacing="0"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       hide_knot="false"
+       fuse_tolerance="0" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-105.12502,-68.083329)">
+    <g
+       id="g9923"
+       transform="matrix(2.6302758,0,0,2.6302758,-155.38153,-160.50321)">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:4.56225921;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:5.8;stroke-dasharray:none;stroke-opacity:1"
+         id="rect5141"
+         width="76.449524"
+         height="76.449524"
+         x="101.32266"
+         y="89.18705"
+         ry="14.08281" />
+    </g>
+  </g>
+</svg>

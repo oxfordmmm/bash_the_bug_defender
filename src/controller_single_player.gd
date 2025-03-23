@@ -14,8 +14,8 @@ func _process(delta: float) -> void:
 func start_game():
 	$PlayerPos/Player.reset()
 	get_tree().call_group("bugs", "queue_free")
-	$Spawner.begin_spawning()
+	$BugSpawner.begin_spawning()
 	$HUD.reset()
 	
 func end_game():
-	$Spawner.stop_spawning()
+	$BugSpawner.stop_spawning()

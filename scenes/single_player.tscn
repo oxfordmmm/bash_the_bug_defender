@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://duxnitjwi1jv0"]
+[gd_scene load_steps=19 format=3 uid="uid://duxnitjwi1jv0"]
 
 [ext_resource type="Script" path="res://src/spawner.gd" id="1_3kom3"]
 [ext_resource type="Script" path="res://src/controller_single_player.gd" id="1_e43ty"]
@@ -6,6 +6,45 @@
 [ext_resource type="PackedScene" uid="uid://54j05ytbw7vo" path="res://scenes/bug.tscn" id="4_uveui"]
 [ext_resource type="Script" path="res://src/ShakeCamera2d.gd" id="5_s3kjh"]
 [ext_resource type="PackedScene" uid="uid://bcdyopy1cqp4u" path="res://scenes/hud.tscn" id="6_lk3rk"]
+[ext_resource type="PackedScene" uid="uid://cx4lcgspflix2" path="res://scenes/antibiotic.tscn" id="7_gx8ad"]
+[ext_resource type="Script" path="res://src/antibiotic_buttons.gd" id="7_o2ffp"]
+[ext_resource type="Texture2D" uid="uid://bnfm4tvq2as30" path="res://art/inkscape/selector.svg" id="8_jtfqp"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_fsjtv"]
+device = -1
+keycode = 4194318
+
+[sub_resource type="InputEventKey" id="InputEventKey_mnycp"]
+device = -1
+keycode = 4194439
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_4ojyl"]
+events = [SubResource("InputEventKey_fsjtv"), SubResource("InputEventKey_mnycp")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_x312v"]
+device = -1
+keycode = 4194322
+
+[sub_resource type="InputEventKey" id="InputEventKey_7e658"]
+device = -1
+keycode = 4194440
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_i4bw8"]
+events = [SubResource("InputEventKey_x312v"), SubResource("InputEventKey_7e658")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_r5qfm"]
+device = -1
+keycode = 4194324
+
+[sub_resource type="InputEventKey" id="InputEventKey_0jxe3"]
+device = -1
+keycode = 4194441
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_3rqma"]
+events = [SubResource("InputEventKey_r5qfm"), SubResource("InputEventKey_0jxe3")]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_e43ty")
@@ -14,30 +53,43 @@ script = ExtResource("1_e43ty")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -366.0
-offset_top = -320.0
-offset_right = 392.0
-offset_bottom = 400.0
+offset_left = -624.0
+offset_top = -413.0
+offset_right = 134.0
+offset_bottom = 307.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.49774, 1.26228)
 color = Color(0.536796, 0.740239, 0.741104, 1)
 
 [node name="PlayerPos" type="Marker2D" parent="."]
 position = Vector2(320, 360)
 
 [node name="Player" parent="PlayerPos" instance=ExtResource("1_fs8nr")]
+unique_name_in_owner = true
+starting_health = 10
+antibiotic_colour = 0
 
-[node name="Spawner" type="Node" parent="." node_paths=PackedStringArray("spawn_centre")]
+[node name="BugSpawner" type="Node" parent="." node_paths=PackedStringArray("spawn_centre")]
+unique_name_in_owner = true
 script = ExtResource("1_3kom3")
 spawn_centre = NodePath("../PlayerPos")
-spawn_distance = 350.0
+spawn_distance = 450.0
 bug_scene = ExtResource("4_uveui")
 initial_rate = 0.6
 spawn_acceleration = 0.03
+initial_resistance_rates = {
+0: 0.2,
+1: 0.2,
+2: 0.2
+}
 
-[node name="SpawnTimer" type="Timer" parent="Spawner"]
+[node name="SpawnTimer" type="Timer" parent="BugSpawner"]
 
-[node name="AccelerationTimer" type="Timer" parent="Spawner"]
+[node name="AccelerationTimer" type="Timer" parent="BugSpawner"]
+
+[node name="ReduceResTimer" type="Timer" parent="BugSpawner"]
+autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, 360)
@@ -49,7 +101,91 @@ max_roll = 1.0
 
 [node name="HUD" parent="." instance=ExtResource("6_lk3rk")]
 
+[node name="Buttons" type="CanvasLayer" parent="."]
+script = ExtResource("7_o2ffp")
+
+[node name="Red" type="Button" parent="Buttons"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -120.0
+offset_right = -100.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+action_mode = 0
+shortcut = SubResource("Shortcut_4ojyl")
+flat = true
+
+[node name="Antibiotic" parent="Buttons/Red" instance=ExtResource("7_gx8ad")]
+rotation = -2.35619
+scale = Vector2(1.23, 1.23)
+collision_layer = 0
+collision_mask = 0
+speed = 0
+
+[node name="Blue" type="Button" parent="Buttons"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_right = 100.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+action_mode = 0
+shortcut = SubResource("Shortcut_i4bw8")
+flat = true
+
+[node name="Antibiotic" parent="Buttons/Blue" instance=ExtResource("7_gx8ad")]
+rotation = 3.92699
+scale = Vector2(1.23, 1.23)
+collision_layer = 0
+collision_mask = 0
+speed = 0
+type = 2
+
+[node name="Green" type="Button" parent="Buttons"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = -120.0
+offset_right = 300.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+action_mode = 0
+shortcut = SubResource("Shortcut_3rqma")
+flat = true
+
+[node name="Antibiotic" parent="Buttons/Green" instance=ExtResource("7_gx8ad")]
+rotation = 3.92699
+scale = Vector2(1.23, 1.23)
+collision_layer = 0
+collision_mask = 0
+speed = 0
+type = 1
+
+[node name="Selector" type="Sprite2D" parent="Buttons"]
+position = Vector2(124, 597)
+scale = Vector2(0.14481, 0.14481)
+texture = ExtResource("8_jtfqp")
+
 [connection signal="died" from="PlayerPos/Player" to="." method="end_game"]
 [connection signal="hit" from="PlayerPos/Player" to="Camera2D" method="add_trauma" binds= [5]]
-[connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="spawn"]
-[connection signal="timeout" from="Spawner/AccelerationTimer" to="Spawner" method="speed_up"]
+[connection signal="timeout" from="BugSpawner/SpawnTimer" to="BugSpawner" method="spawn"]
+[connection signal="timeout" from="BugSpawner/AccelerationTimer" to="BugSpawner" method="speed_up"]
+[connection signal="timeout" from="BugSpawner/ReduceResTimer" to="BugSpawner" method="reduce_resistances"]
+[connection signal="pressed" from="Buttons/Red" to="Buttons" method="set_antibiotic_color" binds= ["red"]]
+[connection signal="pressed" from="Buttons/Blue" to="Buttons" method="set_antibiotic_color" binds= ["blue"]]
+[connection signal="pressed" from="Buttons/Green" to="Buttons" method="set_antibiotic_color" binds= ["green"]]

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcdyopy1cqp4u"]
+[gd_scene load_steps=6 format=3 uid="uid://bcdyopy1cqp4u"]
 
 [ext_resource type="Script" path="res://src/hud.gd" id="1_xivjf"]
 [ext_resource type="FontFile" uid="uid://d212niffowpi" path="res://fonts/Xolonium-Regular.ttf" id="2_7vdv1"]
+[ext_resource type="Texture2D" uid="uid://bvjxmmvk8galv" path="res://art/inkscape/circle.svg" id="3_2kxob"]
+[ext_resource type="Texture2D" uid="uid://dhpew4m0b5m3w" path="res://art/inkscape/square.svg" id="4_jtwgh"]
+[ext_resource type="Texture2D" uid="uid://cv1rrgcdrjmva" path="res://art/inkscape/star.svg" id="5_t57ls"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_xivjf")
@@ -34,3 +37,75 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_7vdv1")
 theme_override_font_sizes/font_size = 32
 text = "Press R to restart"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -257.0
+offset_top = 14.0
+offset_right = -22.0
+offset_bottom = 140.0
+grow_horizontal = 0
+split_offset = 55
+
+[node name="ResSymbols" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="Red" type="TextureRect" parent="HSplitContainer/ResSymbols"]
+modulate = Color(1, 0.06, 0.06, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_2kxob")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Blue" type="TextureRect" parent="HSplitContainer/ResSymbols"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_jtwgh")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Green" type="TextureRect" parent="HSplitContainer/ResSymbols"]
+modulate = Color(0.0930073, 0.330486, 1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("5_t57ls")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="ResBars" type="VBoxContainer" parent="HSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Red" type="ProgressBar" parent="HSplitContainer/ResBars"]
+modulate = Color(1, 0.06, 0.06, 1)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 1.0
+value = 0.26
+show_percentage = false
+
+[node name="Blue" type="ProgressBar" parent="HSplitContainer/ResBars"]
+modulate = Color(0.0930073, 0.330486, 1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 1.0
+value = 0.36
+show_percentage = false
+
+[node name="Green" type="ProgressBar" parent="HSplitContainer/ResBars"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 1.0
+value = 0.36
+show_percentage = false
