@@ -6,3 +6,10 @@
 music/
 
 *.tmp
+
+
+
+# Builds
+*.exe
+*.zip
+*.gz
