@@ -13,3 +13,6 @@ music/
 *.exe
 *.zip
 *.gz
+*.sh
+*.pck
+*.x86_64
