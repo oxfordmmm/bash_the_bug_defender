@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://duxnitjwi1jv0"]
+[gd_scene load_steps=22 format=3 uid="uid://duxnitjwi1jv0"]
 
 [ext_resource type="Script" path="res://src/spawner.gd" id="1_3kom3"]
 [ext_resource type="Script" path="res://src/controller_single_player.gd" id="1_e43ty"]
@@ -19,8 +19,12 @@ device = -1
 keycode = 4194439
 unicode = 49
 
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_ajken"]
+button_index = 10
+pressed = true
+
 [sub_resource type="Shortcut" id="Shortcut_4ojyl"]
-events = [SubResource("InputEventKey_fsjtv"), SubResource("InputEventKey_mnycp")]
+events = [SubResource("InputEventKey_fsjtv"), SubResource("InputEventKey_mnycp"), SubResource("InputEventJoypadButton_ajken")]
 
 [sub_resource type="InputEventKey" id="InputEventKey_x312v"]
 device = -1
@@ -31,8 +35,11 @@ device = -1
 keycode = 4194440
 unicode = 50
 
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_do5ng"]
+pressed = true
+
 [sub_resource type="Shortcut" id="Shortcut_i4bw8"]
-events = [SubResource("InputEventKey_x312v"), SubResource("InputEventKey_7e658")]
+events = [SubResource("InputEventKey_x312v"), SubResource("InputEventKey_7e658"), SubResource("InputEventJoypadButton_do5ng")]
 
 [sub_resource type="InputEventKey" id="InputEventKey_r5qfm"]
 device = -1
@@ -43,8 +50,12 @@ device = -1
 keycode = 4194441
 unicode = 51
 
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_pab4n"]
+button_index = 3
+pressed = true
+
 [sub_resource type="Shortcut" id="Shortcut_3rqma"]
-events = [SubResource("InputEventKey_r5qfm"), SubResource("InputEventKey_0jxe3")]
+events = [SubResource("InputEventKey_r5qfm"), SubResource("InputEventKey_0jxe3"), SubResource("InputEventJoypadButton_pab4n")]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_e43ty")
