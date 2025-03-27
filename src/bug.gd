@@ -86,3 +86,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	print(area.get_groups())
 	area.take_dmg(dmg)
 	queue_free()
+
+
+func _on_died() -> void:
+	$SoundBugDied.play()
