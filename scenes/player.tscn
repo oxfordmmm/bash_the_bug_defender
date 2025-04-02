@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwiqoaltmy5g3"]
+[gd_scene load_steps=7 format=3 uid="uid://dwiqoaltmy5g3"]
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_5woqo"]
 [ext_resource type="PackedScene" uid="uid://cx4lcgspflix2" path="res://scenes/antibiotic.tscn" id="2_nu7ge"]
 [ext_resource type="Texture2D" uid="uid://ckkpwsybeu4q" path="res://art/tim.png" id="3_tqxam"]
+[ext_resource type="AudioStream" uid="uid://bmqkh34ui8ias" path="res://audio/tisss.wav" id="4_p7gm7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k02xw"]
 radius = 61.0082
@@ -33,4 +34,8 @@ scale = Vector2(0.32, 0.32)
 sprite_frames = SubResource("SpriteFrames_25unl")
 animation = &"alive"
 
+[node name="SoundHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_p7gm7")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="hit" from="." to="." method="_on_hit"]

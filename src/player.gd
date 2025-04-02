@@ -52,3 +52,7 @@ func take_dmg(amount: int):
 		
 func set_antibiotic_color(colour: String):
 	antibiotic_colour = game_enums.string_to_colour[colour]
+
+
+func _on_hit() -> void:
+	$SoundHit.play()
