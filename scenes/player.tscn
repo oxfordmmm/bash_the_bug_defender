@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_5woqo"]
 [ext_resource type="PackedScene" uid="uid://cx4lcgspflix2" path="res://scenes/antibiotic.tscn" id="2_nu7ge"]
-[ext_resource type="Texture2D" uid="uid://ckkpwsybeu4q" path="res://art/tim.png" id="3_tqxam"]
+[ext_resource type="Texture2D" uid="uid://d2e4qmagqdlkd" path="res://art/generic_doctor.svg" id="3_7l05o"]
 [ext_resource type="AudioStream" uid="uid://bmqkh34ui8ias" path="res://audio/tisss.wav" id="4_p7gm7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k02xw"]
@@ -12,7 +12,7 @@ radius = 61.0082
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_tqxam")
+"texture": ExtResource("3_7l05o")
 }],
 "loop": true,
 "name": &"alive",
@@ -30,7 +30,6 @@ metadata/_edit_group_ = true
 shape = SubResource("CircleShape2D_k02xw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.32, 0.32)
 sprite_frames = SubResource("SpriteFrames_25unl")
 animation = &"alive"
 
