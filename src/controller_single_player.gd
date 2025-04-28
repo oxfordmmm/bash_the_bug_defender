@@ -19,3 +19,4 @@ func start_game():
 	
 func end_game():
 	$BugSpawner.stop_spawning()
+	$HUD.show_result()
