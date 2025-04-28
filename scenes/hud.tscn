@@ -39,15 +39,16 @@ theme_override_font_sizes/font_size = 32
 text = "Press R to restart"
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -257.0
-offset_top = 14.0
-offset_right = -22.0
-offset_bottom = 140.0
+anchors_preset = -1
+anchor_left = 0.98
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.02
+offset_left = -235.0
+offset_top = 0.3
+offset_right = -0.3
+offset_bottom = 126.0
 grow_horizontal = 0
-split_offset = 55
 
 [node name="ResSymbols" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
@@ -109,3 +110,20 @@ size_flags_vertical = 3
 max_value = 1.0
 value = 0.36
 show_percentage = false
+
+[node name="ResultMessage" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -149.0
+offset_top = -501.0
+offset_right = 149.0
+offset_bottom = -462.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_7vdv1")
+theme_override_font_sizes/font_size = 32
+text = "Game over"
+horizontal_alignment = 1

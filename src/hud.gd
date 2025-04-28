@@ -23,9 +23,14 @@ func reset():
 	score = 0
 	$ScoreLabel.text = str(score)
 	$ScoreLabel.show()
+	$ResultMessage.hide()
 	
 
 func add_score():
 	score += 1
 	$ScoreLabel.text = str(score)
 	$ScoreLabel.show()
+
+func show_result():
+	$ResultMessage.text = "Game over\nYou bashed " + str(score) + " bugs!"
+	$ResultMessage.show()

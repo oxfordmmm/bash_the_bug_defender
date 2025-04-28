@@ -74,7 +74,7 @@ scale = Vector2(1.49774, 1.26228)
 color = Color(0.536796, 0.740239, 0.741104, 1)
 
 [node name="PlayerPos" type="Marker2D" parent="."]
-position = Vector2(320, 360)
+position = Vector2(320, 450)
 
 [node name="Player" parent="PlayerPos" instance=ExtResource("1_fs8nr")]
 unique_name_in_owner = true
@@ -89,11 +89,6 @@ spawn_distance = 450.0
 bug_scene = ExtResource("4_uveui")
 initial_rate = 0.6
 spawn_acceleration = 0.03
-initial_resistance_rates = {
-0: 0.2,
-1: 0.2,
-2: 0.2
-}
 
 [node name="SpawnTimer" type="Timer" parent="BugSpawner"]
 

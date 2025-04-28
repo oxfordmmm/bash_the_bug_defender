@@ -13,13 +13,12 @@ var colours: Dictionary
 @export var icon_green: Resource
 var icons: Dictionary
 
-@export var res_contribution: float = 0.02
-@export var misuse_res_contribution: float = 0.5
+@export var res_contribution: float = 0.04
+@export var misuse_res_contribution: float = 0.1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_visuals()
-
 
 func _physics_process(delta):
 	position += transform.x * speed * delta

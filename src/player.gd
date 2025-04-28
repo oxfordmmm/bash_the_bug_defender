@@ -7,6 +7,8 @@ signal died
 @export var antibiotic_scene: PackedScene
 @export var antibiotic_colour: game_enums.AntibioticTypes = game_enums.AntibioticTypes.RED
 var health: int
+var game_over: bool = false
+
 
 # y inverted for some reason
 var INPUT_DIR_MAPPING = {
@@ -22,6 +24,7 @@ var INPUT_DIR_MAPPING = {
 
 func reset():
 	health = starting_health
+	game_over = false
 	$CollisionShape2D.set_deferred("disabled", false)
 	$AnimatedSprite2D.set("visible", true)
 
@@ -34,12 +37,14 @@ func _process(delta: float) -> void:
 			fire_antibiotic(INPUT_DIR_MAPPING[input])
 
 func fire_antibiotic(dir: Vector2) -> void:
-	var antibiotic = antibiotic_scene.instantiate()
-	antibiotic.initialize(to_global(position) + dir * 50, dir, antibiotic_colour)
-	get_tree().root.add_child(antibiotic)
+	if !game_over:
+		var antibiotic = antibiotic_scene.instantiate()
+		antibiotic.initialize(to_global(position) + (dir * 50), dir, antibiotic_colour)
+		get_tree().root.add_child(antibiotic)
 
 func die():
 	died.emit()
+	game_over = true
 	$CollisionShape2D.set_deferred("disabled", true)
 	$AnimatedSprite2D.set("visible", false)
 

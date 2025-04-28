@@ -7,7 +7,7 @@
    viewBox="0 0 121.70213 121.70213"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:version="1.4 (e7c3feb, 2024-10-09)"
    sodipodi:docname="square.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -27,12 +27,12 @@
      inkscape:lockguides="false"
      showguides="false"
      inkscape:zoom="0.75871705"
-     inkscape:cx="71.831785"
+     inkscape:cx="71.172778"
      inkscape:cy="187.15805"
      inkscape:window-width="1920"
-     inkscape:window-height="1027"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-height="940"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="g9923">
     <sodipodi:guide
@@ -60,7 +60,10 @@
        id="grid3571"
        dotted="false"
        originx="-42.3043"
-       originy="-5.2626458" />
+       originy="-5.2626458"
+       spacingy="1"
+       spacingx="1"
+       units="mm" />
   </sodipodi:namedview>
   <defs
      id="defs2">
@@ -90,12 +93,12 @@
        id="g9923"
        transform="matrix(2.6302758,0,0,2.6302758,-155.38153,-160.50321)">
       <rect
-         style="fill:none;stroke:#000000;stroke-width:8.02051;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         style="fill:none;stroke:#000000;stroke-width:6.34886;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="rect35730"
-         width="38.24921"
-         height="38.24921"
-         x="115.38102"
-         y="103.24542" />
+         width="39.920815"
+         height="39.920811"
+         x="114.5452"
+         y="102.4096" />
     </g>
   </g>
 </svg>
