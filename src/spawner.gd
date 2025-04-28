@@ -9,9 +9,9 @@ extends Node
 var spawn_rate = 1
 
 var initial_resistance_rates: Dictionary = {
-	game_enums.AntibioticTypes.RED: 0.5,
-	game_enums.AntibioticTypes.BLUE: 0.5,
-	game_enums.AntibioticTypes.GREEN: 0.5,
+	game_enums.AntibioticTypes.RED: 0.2,
+	game_enums.AntibioticTypes.BLUE: 0.2,
+	game_enums.AntibioticTypes.GREEN: 0.2,
 }
 @export var resistance_rates: Dictionary
 
