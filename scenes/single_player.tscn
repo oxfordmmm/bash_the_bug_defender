@@ -1,13 +1,13 @@
 [gd_scene load_steps=22 format=3 uid="uid://duxnitjwi1jv0"]
 
-[ext_resource type="Script" path="res://src/spawner.gd" id="1_3kom3"]
-[ext_resource type="Script" path="res://src/controller_single_player.gd" id="1_e43ty"]
+[ext_resource type="Script" uid="uid://dod7362pichyl" path="res://src/spawner.gd" id="1_3kom3"]
+[ext_resource type="Script" uid="uid://ctqb6ftfmokb" path="res://src/controller_single_player.gd" id="1_e43ty"]
 [ext_resource type="PackedScene" uid="uid://dwiqoaltmy5g3" path="res://scenes/player.tscn" id="1_fs8nr"]
 [ext_resource type="PackedScene" uid="uid://54j05ytbw7vo" path="res://scenes/bug.tscn" id="4_uveui"]
-[ext_resource type="Script" path="res://src/ShakeCamera2d.gd" id="5_s3kjh"]
+[ext_resource type="Script" uid="uid://2eb2r1pr7ftq" path="res://src/ShakeCamera2d.gd" id="5_s3kjh"]
 [ext_resource type="PackedScene" uid="uid://bcdyopy1cqp4u" path="res://scenes/hud.tscn" id="6_lk3rk"]
 [ext_resource type="PackedScene" uid="uid://cx4lcgspflix2" path="res://scenes/antibiotic.tscn" id="7_gx8ad"]
-[ext_resource type="Script" path="res://src/antibiotic_buttons.gd" id="7_o2ffp"]
+[ext_resource type="Script" uid="uid://cxrd7g6df846e" path="res://src/antibiotic_buttons.gd" id="7_o2ffp"]
 [ext_resource type="Texture2D" uid="uid://bnfm4tvq2as30" path="res://art/inkscape/selector.svg" id="8_jtfqp"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_fsjtv"]

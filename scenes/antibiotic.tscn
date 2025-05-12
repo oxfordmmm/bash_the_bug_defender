@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cx4lcgspflix2"]
 
-[ext_resource type="Script" path="res://src/antibiotic.gd" id="1_1iw3b"]
+[ext_resource type="Script" uid="uid://bq83vjkwv0vgi" path="res://src/antibiotic.gd" id="1_1iw3b"]
 [ext_resource type="Texture2D" uid="uid://bvjxmmvk8galv" path="res://art/inkscape/circle.svg" id="2_afipp"]
 [ext_resource type="Texture2D" uid="uid://dhpew4m0b5m3w" path="res://art/inkscape/square.svg" id="3_l5uwb"]
 [ext_resource type="Texture2D" uid="uid://cv1rrgcdrjmva" path="res://art/inkscape/star.svg" id="4_8mlew"]

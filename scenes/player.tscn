@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dwiqoaltmy5g3"]
 
-[ext_resource type="Script" path="res://src/player.gd" id="1_5woqo"]
+[ext_resource type="Script" uid="uid://dm71dvh828ttp" path="res://src/player.gd" id="1_5woqo"]
 [ext_resource type="PackedScene" uid="uid://cx4lcgspflix2" path="res://scenes/antibiotic.tscn" id="2_nu7ge"]
 [ext_resource type="Texture2D" uid="uid://d2e4qmagqdlkd" path="res://art/generic_doctor.svg" id="3_6up7x"]
 [ext_resource type="AudioStream" uid="uid://bmqkh34ui8ias" path="res://audio/tisss.wav" id="4_p7gm7"]
