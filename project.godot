@@ -12,7 +12,7 @@ config_version=5
 
 config/name="bash_the_bug_game"
 run/main_scene="res://scenes/single_player.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://art/icon.svg"
 
 [display]
@@ -24,6 +24,10 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="bash_the_bug_game"
+
+[editor]
+
+movie_writer/disable_vsync=true
 
 [input]
 
@@ -76,4 +80,5 @@ restart={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
