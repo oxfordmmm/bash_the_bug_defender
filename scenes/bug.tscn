@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://54j05ytbw7vo"]
+[gd_scene load_steps=10 format=3 uid="uid://54j05ytbw7vo"]
 
 [ext_resource type="Script" uid="uid://dp36ix1flbu1g" path="res://src/bug.gd" id="1_1bcr5"]
 [ext_resource type="Texture2D" uid="uid://bmexl8tdq1poa" path="res://art/bug_splat.svg" id="2_5uwkx"]
 [ext_resource type="Texture2D" uid="uid://dcxs1a5to2h2k" path="res://art/inkscape/circle_solid.svg" id="2_sebxl"]
 [ext_resource type="Texture2D" uid="uid://dwp8ws7d80r4x" path="res://art/inkscape/bug_1.svg" id="2_xmw1p"]
-[ext_resource type="Texture2D" uid="uid://dpb2jlcwjqppt" path="res://art/bug_super.svg" id="3_ufsta"]
 [ext_resource type="Texture2D" uid="uid://7j7c4nn5cggh" path="res://art/inkscape/star_solid.svg" id="7_c23bb"]
 [ext_resource type="Texture2D" uid="uid://duutc2doioktk" path="res://art/inkscape/square_solid.svg" id="8_f4mtn"]
 [ext_resource type="AudioStream" uid="uid://cjd18k4qwfve0" path="res://audio/pop.wav" id="8_hyko7"]
@@ -25,14 +24,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"dead",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_ufsta")
-}],
-"loop": true,
-"name": &"super",
 "speed": 5.0
 }]
 
@@ -59,7 +50,7 @@ position = Vector2(-10.86, 20.57)
 rotation = 1.91986
 scale = Vector2(0.139791, 0.139791)
 sprite_frames = SubResource("SpriteFrames_m2now")
-animation = &"alive"
+animation = &"dead"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)

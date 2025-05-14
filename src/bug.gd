@@ -66,6 +66,7 @@ func set_colours():
 
 func die():
 	$Sprite.animation = "dead"
+	$Sprite.scale = Vector2(1.5, 1.5)
 	speed = 0
 	$CollisionShape2D.set_deferred("disabled", true)
 	died.emit()
