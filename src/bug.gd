@@ -24,7 +24,7 @@ func _ready():
 		died.connect(hud.add_score)
 
 func _physics_process(delta):
-	position += transform.x * speed * delta
+	position += transform.x * Global.speed * delta
 
 func initialize(start_pos: Vector2, player_pos: Vector2, res: Array[game_enums.AntibioticTypes]):
 	resistances = res
