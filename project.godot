@@ -25,6 +25,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="bash_the_bug_game"
 
+[editor]
+
+movie_writer/disable_vsync=true
+
 [input]
 
 N={
@@ -76,4 +80,5 @@ restart={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
