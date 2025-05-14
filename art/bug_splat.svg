@@ -22,12 +22,12 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="5.890625"
-     inkscape:cx="63.830239"
+     inkscape:cx="63.915119"
      inkscape:cy="64"
-     inkscape:window-width="2400"
-     inkscape:window-height="1262"
-     inkscape:window-x="4312"
-     inkscape:window-y="602"
+     inkscape:window-width="1728"
+     inkscape:window-height="992"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg6"
      showgrid="true">
@@ -48,26 +48,6 @@
        gridanglez="30"
        visible="true" />
   </sodipodi:namedview>
-  <ellipse
-     style="fill:#6c2fcf;stroke:#213225"
-     id="path1"
-     cx="85.127312"
-     cy="-2.0164526"
-     rx="4.9230771"
-     ry="6.1114058"
-     transform="rotate(30.950685)" />
-  <ellipse
-     style="fill:#6c2fcf;stroke:#213225"
-     id="path2"
-     cx="107.7815"
-     cy="-4.0891495"
-     rx="4.6684351"
-     ry="6.9602122"
-     transform="rotate(46.091831)" />
-  <path
-     style="fill:none;stroke:#213225"
-     d="m 45.344573,63.067909 8.39258,-6.087614 4.364887,8.687561 4.257191,-5.814461 3.434181,7.257704 10.349747,-8.530548 v 0"
-     id="path3" />
   <path
      style="fill:#3ccf2f;stroke:#213225;fill-opacity:1"
      d="m 31.915119,48.212202 c 0,0 -16.491601,-2.953759 -20.371352,-9.33687 -2.4129451,-3.969867 -2.0301587,-10.967517 0.679045,-13.920425 2.709204,-2.952908 7.110214,-3.063476 10.015915,-1.35809 7.603499,4.462572 9.676392,24.615385 9.676392,24.615385 z"
