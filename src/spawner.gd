@@ -4,14 +4,13 @@ extends Node
 @export var spawn_distance: float
 @export var bug_scene: PackedScene
 
-@export var initial_rate: float = 1
-@export var spawn_acceleration: float = 0.1 # per second
+var spawn_acceleration: float = 0.1 # per second
 var spawn_rate = 1
 
 var initial_resistance_rates: Dictionary = {
-	game_enums.AntibioticTypes.RED: 0.2,
-	game_enums.AntibioticTypes.BLUE: 0.2,
-	game_enums.AntibioticTypes.GREEN: 0.2,
+	game_enums.AntibioticTypes.RED: 0.1,
+	game_enums.AntibioticTypes.BLUE: 0.1,
+	game_enums.AntibioticTypes.GREEN: 0.1,
 }
 @export var resistance_rates: Dictionary
 
@@ -29,12 +28,12 @@ var DIRECTIONS = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	spawn_acceleration = Global.spawn_rate_acceleration
 
 
 	
 func begin_spawning():
-	spawn_rate = initial_rate
+	spawn_rate = Global.initial_spawn_rate
 	resistance_rates = initial_resistance_rates.duplicate(false)
 	$SpawnTimer.wait_time = 1/spawn_rate
 	$SpawnTimer.start()
@@ -66,8 +65,11 @@ func spawn():
 	for color in resistance_rates:
 		if randf() < resistance_rates[color]:
 			resistances.append(color)
-		if len(resistances) >= 2:
-			break
+	
+	if len(resistances) > 2:
+		print("removing")
+		# need to remove one at random
+		resistances.remove_at(randi() % 3)
 	
 	bug.initialize(spawn_centre.position + dir * spawn_distance, spawn_centre.position, resistances)
 	get_tree().root.add_child(bug)
