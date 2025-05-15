@@ -7,11 +7,6 @@ extends Node
 var spawn_acceleration: float = 0.1 # per second
 var spawn_rate = 1
 
-var initial_resistance_rates: Dictionary = {
-	game_enums.AntibioticTypes.RED: 0.1,
-	game_enums.AntibioticTypes.BLUE: 0.1,
-	game_enums.AntibioticTypes.GREEN: 0.1,
-}
 @export var resistance_rates: Dictionary
 
 # y inverted for some reason
@@ -34,7 +29,11 @@ func _ready() -> void:
 	
 func begin_spawning():
 	spawn_rate = Global.initial_spawn_rate
-	resistance_rates = initial_resistance_rates.duplicate(false)
+	resistance_rates = {
+		game_enums.AntibioticTypes.RED: Global.initial_resistance_rate,
+		game_enums.AntibioticTypes.BLUE: Global.initial_resistance_rate,
+		game_enums.AntibioticTypes.GREEN: Global.initial_resistance_rate,
+	}
 	$SpawnTimer.wait_time = 1/spawn_rate
 	$SpawnTimer.start()
 	$AccelerationTimer.start()
