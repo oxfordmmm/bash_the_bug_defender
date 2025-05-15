@@ -2,7 +2,7 @@ extends Area2D
 
 signal died
 
-@export var speed: int
+var speed: int
 @export var health: int
 @export var dmg: int
 
@@ -20,6 +20,7 @@ var resistances: Array[game_enums.AntibioticTypes]
 
 func _ready():
 	var hud = get_tree().root.get_node("Main/HUD")
+	speed = Global.speed
 	if hud:
 		died.connect(hud.add_score)
 
@@ -66,6 +67,7 @@ func set_colours():
 
 func die():
 	$Sprite.animation = "dead"
+	$Sprite.scale = Vector2(1.5, 1.5)
 	speed = 0
 	$CollisionShape2D.set_deferred("disabled", true)
 	died.emit()

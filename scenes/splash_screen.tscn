@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbith3cgujp0v"]
+
+[ext_resource type="Script" uid="uid://bw1qgj05ww7cs" path="res://src/splash_screen.gd" id="1_4gp4q"]
+[ext_resource type="Texture2D" uid="uid://druoqvdqk10ay" path="res://art/defender.svg" id="1_hsxvm"]
+[ext_resource type="Texture2D" uid="uid://d3h2wu7vxstqt" path="res://art/Bash-the-Bug-Logo.webp" id="1_n4g2v"]
+
+[node name="SplashScreen" type="TextureRect"]
+script = ExtResource("1_4gp4q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -56.0
+offset_right = 724.0
+offset_bottom = 776.0
+color = Color(1, 1, 0.247059, 1)
+
+[node name="Defender" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 517.0
+offset_right = 608.0
+offset_bottom = 599.0
+rotation = -0.351068
+texture = ExtResource("1_hsxvm")
+
+[node name="BashTheBug" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 17.0
+offset_right = 459.0
+offset_bottom = 296.0
+texture = ExtResource("1_n4g2v")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 544.0
+offset_right = 580.0
+offset_bottom = 588.0
+text = "Start"
+
+[node name="DifficultyButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 615.0
+offset_right = 580.0
+offset_bottom = 660.0
+selected = 0
+item_count = 3
+popup/item_0/text = "Sniffle Difficulty"
+popup/item_0/id = 0
+popup/item_1/text = "Outbreak Difficulty"
+popup/item_1/id = 1
+popup/item_2/text = "Pandemic Difficulty"
+popup/item_2/id = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
