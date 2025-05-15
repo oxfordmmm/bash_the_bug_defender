@@ -2,7 +2,7 @@ extends Area2D
 
 signal died
 
-@export var speed: int
+var speed: int
 @export var health: int
 @export var dmg: int
 
@@ -20,11 +20,12 @@ var resistances: Array[game_enums.AntibioticTypes]
 
 func _ready():
 	var hud = get_tree().root.get_node("Main/HUD")
+	speed = Global.speed
 	if hud:
 		died.connect(hud.add_score)
 
 func _physics_process(delta):
-	position += transform.x * Global.speed * delta
+	position += transform.x * speed * delta
 
 func initialize(start_pos: Vector2, player_pos: Vector2, res: Array[game_enums.AntibioticTypes]):
 	resistances = res
