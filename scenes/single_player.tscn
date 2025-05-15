@@ -85,7 +85,7 @@ antibiotic_colour = 0
 unique_name_in_owner = true
 script = ExtResource("1_3kom3")
 spawn_centre = NodePath("../PlayerPos")
-spawn_distance = 450.0
+spawn_distance = 500.0
 bug_scene = ExtResource("4_uveui")
 
 [node name="SpawnTimer" type="Timer" parent="BugSpawner"]
