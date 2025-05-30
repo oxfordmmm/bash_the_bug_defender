@@ -13,10 +13,10 @@ var spawn_rate = 1
 var DIRECTIONS = [
 	Vector2(0, -1),
 	#Vector2(0, 1),
-	Vector2(1, 0),
-	Vector2(-1, 0),
-	Vector2(1, -1),
-	Vector2(-1, -1),
+	Vector2(0.8, 0), # horizontal distance shorter than vertical (includes HUD area)
+	Vector2(-0.8, 0),
+	Vector2(0.9, -0.9), # diagonal distance slightly shorter than vertical
+	Vector2(-0.9, -0.9),
 	#Vector2(1, 1),
 	#Vector2(-1, 1),
 ]

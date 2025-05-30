@@ -30,6 +30,9 @@ func add_score():
 	score += 1
 	$ScoreLabel.text = str(score)
 	$ScoreLabel.show()
+	if ($ResultMessage.is_visible()):
+		show_result()
+
 
 func show_result():
 	$ResultMessage.text = "Game over\nYou bashed " + str(score) + " bugs!"
