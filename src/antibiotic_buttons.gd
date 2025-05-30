@@ -2,6 +2,12 @@ extends Node
 
 func _ready() -> void:
 	set_antibiotic_color("red")
+	
+## Horrible hack to pick up bottom right button press
+func _input(event):
+	if event is InputEventJoypadMotion:
+		if (event.axis == 5):
+			set_antibiotic_color("green")
 
 func set_antibiotic_color(colour: String):
 	print("Selected ", colour)
