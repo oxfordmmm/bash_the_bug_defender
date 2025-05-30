@@ -13,8 +13,6 @@ var colours: Dictionary
 @export var icon_green: Resource
 var icons: Dictionary
 
-@export var res_contribution: float
-@export var misuse_res_contribution: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
