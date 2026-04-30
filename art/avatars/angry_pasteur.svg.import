@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://druoqvdqk10ay"
-path="res://.godot/imported/defender.svg-34d1219da4eae3645f7903a5604e9982.ctex"
+uid="uid://ht802t6xk6rw"
+path="res://.godot/imported/angry_pasteur.svg-5ad99e8ff11b03356f6735397515aaa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/defender.svg"
-dest_files=["res://.godot/imported/defender.svg-34d1219da4eae3645f7903a5604e9982.ctex"]
+source_file="res://art/avatars/angry_pasteur.svg"
+dest_files=["res://.godot/imported/angry_pasteur.svg-5ad99e8ff11b03356f6735397515aaa5.ctex"]
 
 [params]
 
