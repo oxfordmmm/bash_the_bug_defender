@@ -1,39 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwiqoaltmy5g3"]
+[gd_scene format=3 uid="uid://dwiqoaltmy5g3"]
 
 [ext_resource type="Script" uid="uid://dm71dvh828ttp" path="res://src/player.gd" id="1_5woqo"]
 [ext_resource type="PackedScene" uid="uid://cx4lcgspflix2" path="res://scenes/antibiotic.tscn" id="2_nu7ge"]
-[ext_resource type="Texture2D" uid="uid://d2e4qmagqdlkd" path="res://art/generic_doctor.svg" id="3_6up7x"]
+[ext_resource type="Texture2D" uid="uid://d2e4qmagqdlkd" path="res://art/avatars/generic_doctor.svg" id="3_dqkch"]
 [ext_resource type="AudioStream" uid="uid://bmqkh34ui8ias" path="res://audio/tisss.wav" id="4_p7gm7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k02xw"]
 radius = 61.0082
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bv0j0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_6up7x")
-}],
-"loop": true,
-"name": &"alive",
-"speed": 5.0
-}]
-
-[node name="Player" type="Area2D" groups=["player"]]
+[node name="Player" type="Area2D" unique_id=111204032 groups=["player"]]
 collision_mask = 0
 script = ExtResource("1_5woqo")
 antibiotic_scene = ExtResource("2_nu7ge")
 antibiotic_colour = 1
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1459814043]
 shape = SubResource("CircleShape2D_k02xw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_bv0j0")
-animation = &"alive"
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1467488115]
+texture = ExtResource("3_dqkch")
 
-[node name="SoundHit" type="AudioStreamPlayer2D" parent="."]
+[node name="SoundHit" type="AudioStreamPlayer2D" parent="." unique_id=1081033740]
 stream = ExtResource("4_p7gm7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
