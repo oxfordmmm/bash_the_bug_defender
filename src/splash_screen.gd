@@ -42,5 +42,5 @@ func _change_avatar_right() -> void:
 	Global.change_avatar($avatar_sprite, 1)
 
 
-func _player_name_changed() -> void:
-	Global.player_name = $NameSetter.text
+func _player_name_changed(text) -> void:
+	Global.player_name = text

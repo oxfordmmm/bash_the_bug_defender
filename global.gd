@@ -1,5 +1,5 @@
 extends Node
-var player_name := "Player name"
+var player_name := ""
 var difficulty: int
 var speed = 30
 var initial_spawn_rate = 0.4
@@ -58,6 +58,8 @@ func change_avatar(avatar_sprite: Sprite2D, change: int) -> void:
 	avatar_sprite.scale = Vector2.ONE * scale_factor
 
 func record_score(score: int):
+	if player_name == "":
+		player_name = "Anon"
 	scores.append([player_name, difficulty, score])
 	save_scores()
 
