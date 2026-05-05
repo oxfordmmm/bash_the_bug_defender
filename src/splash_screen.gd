@@ -10,13 +10,21 @@ func _on_button_pressed() -> void:
 	match difficulty:
 		0:
 			Global.difficulty = 0
+			Global.speed = 40
+			Global.initial_spawn_rate = 0.4
+			Global.spawn_rate_acceleration = 0.007
+			Global.initial_resistance_rate = 0
+			Global.res_contribution = 0.0
+			Global.misuse_res_contribution = 0.0
+		1:
+			Global.difficulty = 0
 			Global.speed = 45
 			Global.initial_spawn_rate = 0.4
 			Global.spawn_rate_acceleration = 0.01
 			Global.initial_resistance_rate = 0
 			Global.res_contribution = 0.03
 			Global.misuse_res_contribution = 0.06
-		1:
+		2:
 			Global.difficulty = 1
 			Global.speed = 75
 			Global.initial_spawn_rate = 0.5
@@ -24,7 +32,7 @@ func _on_button_pressed() -> void:
 			Global.initial_resistance_rate = 0.15
 			Global.res_contribution = 0.04
 			Global.misuse_res_contribution = 0.1
-		2:
+		3:
 			Global.difficulty = 2
 			Global.speed = 105
 			Global.initial_spawn_rate = 0.6
