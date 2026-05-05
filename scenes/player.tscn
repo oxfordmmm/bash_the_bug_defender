@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dwiqoaltmy5g3"]
+[gd_scene load_steps=6 format=3 uid="uid://dwiqoaltmy5g3"]
 
 [ext_resource type="Script" uid="uid://dm71dvh828ttp" path="res://src/player.gd" id="1_5woqo"]
 [ext_resource type="PackedScene" uid="uid://cx4lcgspflix2" path="res://scenes/antibiotic.tscn" id="2_nu7ge"]
@@ -8,20 +8,20 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_k02xw"]
 radius = 61.0082
 
-[node name="Player" type="Area2D" unique_id=111204032 groups=["player"]]
+[node name="Player" type="Area2D" groups=["player"]]
 collision_mask = 0
 script = ExtResource("1_5woqo")
 antibiotic_scene = ExtResource("2_nu7ge")
 antibiotic_colour = 1
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1459814043]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_k02xw")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1467488115]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_dqkch")
 
-[node name="SoundHit" type="AudioStreamPlayer2D" parent="." unique_id=1081033740]
+[node name="SoundHit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_p7gm7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

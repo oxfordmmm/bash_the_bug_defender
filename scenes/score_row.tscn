@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctf0614g8r1m7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym6ag"]
+bg_color = Color(0.853804, 0.380108, 0.844643, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+anti_aliasing = false
+
+[node name="ScoreRow" type="Panel"]
+clip_children = 2
+custom_minimum_size = Vector2(10, 30)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ym6ag")
+
+[node name="Position" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -11.5
+offset_right = 63.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "999"
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 81.0
+offset_top = -11.5
+offset_right = 207.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Matthew Colpus"
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -11.5
+offset_right = -20.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "222"

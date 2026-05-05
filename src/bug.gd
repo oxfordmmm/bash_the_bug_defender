@@ -85,7 +85,6 @@ func take_dmg(amount: int, color: game_enums.AntibioticTypes):
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print(area.get_groups())
 	area.take_dmg(dmg)
 	queue_free()
 

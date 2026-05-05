@@ -1,0 +1,133 @@
+[gd_scene load_steps=5 format=3 uid="uid://dillb8m3saea3"]
+
+[ext_resource type="Script" uid="uid://dj6o0fqngvxqk" path="res://src/high_scores.gd" id="1_3582i"]
+[ext_resource type="PackedScene" uid="uid://ctf0614g8r1m7" path="res://scenes/score_row.tscn" id="2_1o3qf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5trt"]
+bg_color = Color(0.338, 0.65, 0.5564, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lvx3"]
+bg_color = Color(0.0480583, 0.73, 0.0365, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="HighScores" type="CanvasLayer"]
+script = ExtResource("1_3582i")
+score_row_scene = ExtResource("2_1o3qf")
+score_row_color_normal = Color(0.108725, 0.586489, 0.324056, 1)
+score_row_color_new_score = Color(0.854902, 0.380392, 0.843137, 1)
+
+[node name="ColorRect" type="Panel" parent="."]
+offset_left = 92.0
+offset_top = 201.0
+offset_right = 548.0
+offset_bottom = 668.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e5trt")
+
+[node name="HeaderRow" type="Panel" parent="ColorRect"]
+clip_children = 2
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+offset_left = 40.0
+offset_top = 102.0
+offset_right = 430.0
+offset_bottom = 142.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1lvx3")
+
+[node name="Position" type="Label" parent="ColorRect/HeaderRow"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -11.5
+offset_right = 63.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Place"
+
+[node name="Name" type="Label" parent="ColorRect/HeaderRow"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 81.0
+offset_top = -11.5
+offset_right = 207.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Name"
+
+[node name="Score" type="Label" parent="ColorRect/HeaderRow"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -11.5
+offset_right = -20.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Score"
+
+[node name="ScoresContainer" type="VBoxContainer" parent="ColorRect"]
+clip_contents = true
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 145.0
+offset_right = -26.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreRow8" parent="ColorRect/ScoresContainer" instance=ExtResource("2_1o3qf")]
+layout_mode = 2
+
+[node name="ScoreRow7" parent="ColorRect/ScoresContainer" instance=ExtResource("2_1o3qf")]
+layout_mode = 2
+
+[node name="ScoreRow6" parent="ColorRect/ScoresContainer" instance=ExtResource("2_1o3qf")]
+layout_mode = 2
+
+[node name="ScoreRow5" parent="ColorRect/ScoresContainer" instance=ExtResource("2_1o3qf")]
+layout_mode = 2
+
+[node name="ScoreRow4" parent="ColorRect/ScoresContainer" instance=ExtResource("2_1o3qf")]
+layout_mode = 2
+
+[node name="ScoreRow3" parent="ColorRect/ScoresContainer" instance=ExtResource("2_1o3qf")]
+layout_mode = 2
+
+[node name="ScoreRow2" parent="ColorRect/ScoresContainer" instance=ExtResource("2_1o3qf")]
+layout_mode = 2
+
+[node name="ScoreRow" parent="ColorRect/ScoresContainer" instance=ExtResource("2_1o3qf")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -1.0
+offset_bottom = 108.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.9, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "High Scores"
+horizontal_alignment = 1
+vertical_alignment = 1
