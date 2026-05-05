@@ -26,7 +26,7 @@ func reset():
 	health = starting_health
 	game_over = false
 	$CollisionShape2D.set_deferred("disabled", false)
-	$Sprite2D.texture = Global.avatars[Global.avatar_index]
+	Global.change_avatar($Sprite2D, 0)
 	$Sprite2D.set("visible", true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

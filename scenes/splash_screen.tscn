@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cbith3cgujp0v"]
+[gd_scene load_steps=6 format=3 uid="uid://cbith3cgujp0v"]
 
 [ext_resource type="Script" uid="uid://bw1qgj05ww7cs" path="res://src/splash_screen.gd" id="1_4gp4q"]
 [ext_resource type="Texture2D" uid="uid://druoqvdqk10ay" path="res://art/defender.svg" id="1_hsxvm"]
@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://d2e4qmagqdlkd" path="res://art/avatars/generic_doctor.svg" id="4_vbcv6"]
 [ext_resource type="Texture2D" uid="uid://cdrmfqs7h4a7l" path="res://art/pick_left.svg" id="5_a2ut7"]
 
-[node name="SplashScreen" type="TextureRect" unique_id=2005437777]
+[node name="SplashScreen" type="TextureRect"]
 script = ExtResource("1_4gp4q")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=812173387]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = -30.0
 offset_top = -56.0
@@ -17,17 +17,17 @@ offset_right = 724.0
 offset_bottom = 776.0
 color = Color(1, 1, 0.247059, 1)
 
-[node name="Defender" type="TextureRect" parent="." unique_id=1502844046]
+[node name="Defender" type="TextureRect" parent="."]
 z_index = 1
 layout_mode = 0
 offset_left = 57.0
-offset_top = 247.99998
+offset_top = 248.0
 offset_right = 639.0
 offset_bottom = 330.0
-rotation = -0.19373155
+rotation = -0.193732
 texture = ExtResource("1_hsxvm")
 
-[node name="BashTheBug" type="TextureRect" parent="." unique_id=374844255]
+[node name="BashTheBug" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 11.0
@@ -36,7 +36,7 @@ offset_bottom = 290.0
 texture = ExtResource("1_n4g2v")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="." unique_id=1791225638]
+[node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 448.0
 offset_top = 544.0
@@ -44,7 +44,7 @@ offset_right = 580.0
 offset_bottom = 588.0
 text = "Start"
 
-[node name="DifficultyButton" type="OptionButton" parent="." unique_id=666899978]
+[node name="DifficultyButton" type="OptionButton" parent="."]
 layout_mode = 0
 offset_left = 404.0
 offset_top = 615.0
@@ -59,11 +59,11 @@ popup/item_1/id = 1
 popup/item_2/text = "Global Pandemic"
 popup/item_2/id = 2
 
-[node name="avatar_sprite" type="Sprite2D" parent="." unique_id=528512939]
+[node name="avatar_sprite" type="Sprite2D" parent="."]
 position = Vector2(442, 386)
 texture = ExtResource("4_vbcv6")
 
-[node name="pick_left" type="TextureButton" parent="." unique_id=1617002478]
+[node name="pick_left" type="TextureButton" parent="."]
 z_index = 1
 layout_mode = 0
 offset_left = 312.0
@@ -72,16 +72,16 @@ offset_right = 369.0
 offset_bottom = 452.0
 texture_normal = ExtResource("5_a2ut7")
 
-[node name="pick_right" type="TextureButton" parent="." unique_id=1960837514]
+[node name="pick_right" type="TextureButton" parent="."]
 z_index = 1
 layout_mode = 0
 offset_left = 557.0
 offset_top = 450.0
 offset_right = 614.0
 offset_bottom = 580.0
-rotation = 3.1415927
+rotation = 3.14159
 texture_normal = ExtResource("5_a2ut7")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="pick_left" to="." method="_on_pick_left_pressed"]
-[connection signal="pressed" from="pick_right" to="." method="_on_pick_right_pressed"]
+[connection signal="pressed" from="pick_left" to="." method="_change_avatar_left"]
+[connection signal="pressed" from="pick_right" to="." method="_change_avatar_right"]

@@ -1,7 +1,7 @@
 extends TextureRect
 
 func _ready():	
-	$avatar_sprite.texture = Global.avatars[Global.avatar_index]
+	Global.change_avatar($avatar_sprite, 0)
 
 func _on_button_pressed() -> void:
 	var difficulty = get_node("DifficultyButton").get_selected_id()
@@ -30,16 +30,8 @@ func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/single_player.tscn")
 
 
-func _on_pick_left_pressed() -> void:
-	if Global.avatar_index - 1 >= 0:
-		Global.avatar_index = Global.avatar_index - 1
-	else:
-		Global.avatar_index = Global.avatars.size() - 1
-	$avatar_sprite.texture = Global.avatars[Global.avatar_index]
+func _change_avatar_left() -> void:
+	Global.change_avatar($avatar_sprite, -1)
 
-func _on_pick_right_pressed() -> void:
-	if Global.avatar_index + 1 < Global.avatars.size():
-		Global.avatar_index = Global.avatar_index + 1
-	else:
-		Global.avatar_index = 0
-	$avatar_sprite.texture = Global.avatars[Global.avatar_index]
+func _change_avatar_right() -> void:
+	Global.change_avatar($avatar_sprite, 1)
