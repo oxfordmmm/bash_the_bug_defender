@@ -90,7 +90,7 @@ offset_right = 313.0
 offset_bottom = 587.0
 theme_override_font_sizes/font_size = 27
 placeholder_text = "Player Name"
-max_length = 30
+max_length = 20
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="pick_left" to="." method="_change_avatar_left"]
