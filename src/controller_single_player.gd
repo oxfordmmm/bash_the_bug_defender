@@ -16,7 +16,13 @@ func start_game():
 	get_tree().call_group("bugs", "queue_free")
 	$BugSpawner.begin_spawning()
 	$HUD.reset()
+	$HighScores.reset()
 	
 func end_game():
 	$BugSpawner.stop_spawning()
 	$HUD.show_result()
+	Global.record_score($HUD.score)
+
+	# wait 3 seconds
+	await get_tree().create_timer(3).timeout
+	$HighScores.show_scores()

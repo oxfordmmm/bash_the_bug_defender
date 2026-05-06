@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://duxnitjwi1jv0"]
+[gd_scene load_steps=22 format=3 uid="uid://duxnitjwi1jv0"]
 
 [ext_resource type="Script" uid="uid://dod7362pichyl" path="res://src/spawner.gd" id="1_3kom3"]
 [ext_resource type="Script" uid="uid://ctqb6ftfmokb" path="res://src/controller_single_player.gd" id="1_e43ty"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cx4lcgspflix2" path="res://scenes/antibiotic.tscn" id="7_gx8ad"]
 [ext_resource type="Script" uid="uid://cxrd7g6df846e" path="res://src/antibiotic_buttons.gd" id="7_o2ffp"]
 [ext_resource type="Texture2D" uid="uid://bnfm4tvq2as30" path="res://art/inkscape/selector.svg" id="8_jtfqp"]
+[ext_resource type="PackedScene" uid="uid://dillb8m3saea3" path="res://scenes/high_scores.tscn" id="10_es45n"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_fsjtv"]
 device = -1
@@ -60,10 +61,10 @@ script = ExtResource("1_e43ty")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -624.0
-offset_top = -413.0
-offset_right = 134.0
-offset_bottom = 307.0
+offset_left = -798.0
+offset_top = -442.0
+offset_right = -40.0
+offset_bottom = 278.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.49774, 1.26228)
@@ -180,6 +181,9 @@ type = 1
 position = Vector2(124, 597)
 scale = Vector2(0.14481, 0.14481)
 texture = ExtResource("8_jtfqp")
+
+[node name="HighScores" parent="." instance=ExtResource("10_es45n")]
+visible = false
 
 [connection signal="died" from="PlayerPos/Player" to="." method="end_game"]
 [connection signal="hit" from="PlayerPos/Player" to="Camera2D" method="add_trauma" binds= [5]]

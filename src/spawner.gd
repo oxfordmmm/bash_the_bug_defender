@@ -66,7 +66,6 @@ func spawn():
 			resistances.append(color)
 	
 	if len(resistances) > 2:
-		print("removing")
 		# need to remove one at random
 		resistances.remove_at(randi() % 3)
 	
