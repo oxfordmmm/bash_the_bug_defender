@@ -3,7 +3,10 @@ name: Build Windows EXE
 on:
   push:
     tags:
-      - '*.*.*'
+      - '*'
+
+permissions:
+  contents: write
 
 jobs:
   build-windows:
@@ -11,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Godot 4.6.2
         uses: chickensoft-games/setup-godot@v2
@@ -22,16 +25,15 @@ jobs:
       - name: Verify Godot
         run: |
           godot --version
-          godot --headless --help >/dev/null
 
       - name: Export Windows EXE
         run: |
           mkdir -p build/windows
-          godot --headless --path . --export-release "Windows Desktop" "build/windows/MyGame.exe"
+          godot --headless --path . --export-release "Windows Desktop" "build/windows/BashTheBug.exe"
 
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload release asset
+        uses: softprops/action-gh-release@v3
+        if: github.ref_type == 'tag'
         with:
-          name: windows-exe
-          path: build/windows/*.exe
-          if-no-files-found: error
+          files: build/windows/BashTheBug.exe
+          generate_release_notes: true
