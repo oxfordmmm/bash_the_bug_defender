@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2e4qmagqdlkd"
-path="res://.godot/imported/generic_doctor.svg-f541811ed47d3567d9ae46d36f02277d.ctex"
+uid="uid://x4cpdayhnnir"
+path="res://.godot/imported/nurse.png-65cd1295f33818a7244b2f6bff281731.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/generic_doctor.svg"
-dest_files=["res://.godot/imported/generic_doctor.svg-f541811ed47d3567d9ae46d36f02277d.ctex"]
+source_file="res://art/avatars/nurse.png"
+dest_files=["res://.godot/imported/nurse.png-65cd1295f33818a7244b2f6bff281731.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

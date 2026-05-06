@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbith3cgujp0v"]
+[gd_scene load_steps=6 format=3 uid="uid://cbith3cgujp0v"]
 
 [ext_resource type="Script" uid="uid://bw1qgj05ww7cs" path="res://src/splash_screen.gd" id="1_4gp4q"]
 [ext_resource type="Texture2D" uid="uid://druoqvdqk10ay" path="res://art/defender.svg" id="1_hsxvm"]
 [ext_resource type="Texture2D" uid="uid://d3h2wu7vxstqt" path="res://art/Bash-the-Bug-Logo.webp" id="1_n4g2v"]
+[ext_resource type="Texture2D" uid="uid://d2e4qmagqdlkd" path="res://art/avatars/generic_doctor.svg" id="4_vbcv6"]
+[ext_resource type="Texture2D" uid="uid://cdrmfqs7h4a7l" path="res://art/pick_left.svg" id="5_a2ut7"]
 
 [node name="SplashScreen" type="TextureRect"]
 script = ExtResource("1_4gp4q")
@@ -16,20 +18,21 @@ offset_bottom = 776.0
 color = Color(1, 1, 0.247059, 1)
 
 [node name="Defender" type="TextureRect" parent="."]
+z_index = 1
 layout_mode = 0
-offset_left = 26.0
-offset_top = 517.0
-offset_right = 608.0
-offset_bottom = 599.0
-rotation = -0.351068
+offset_left = 57.0
+offset_top = 248.0
+offset_right = 639.0
+offset_bottom = 330.0
+rotation = -0.193732
 texture = ExtResource("1_hsxvm")
 
 [node name="BashTheBug" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 17.0
-offset_right = 459.0
-offset_bottom = 296.0
+offset_left = 5.0
+offset_top = 11.0
+offset_right = 446.0
+offset_bottom = 290.0
 texture = ExtResource("1_n4g2v")
 expand_mode = 1
 
@@ -56,4 +59,29 @@ popup/item_1/id = 1
 popup/item_2/text = "Global Pandemic"
 popup/item_2/id = 2
 
+[node name="avatar_sprite" type="Sprite2D" parent="."]
+position = Vector2(442, 386)
+texture = ExtResource("4_vbcv6")
+
+[node name="pick_left" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 312.0
+offset_top = 322.0
+offset_right = 369.0
+offset_bottom = 452.0
+texture_normal = ExtResource("5_a2ut7")
+
+[node name="pick_right" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 557.0
+offset_top = 450.0
+offset_right = 614.0
+offset_bottom = 580.0
+rotation = 3.14159
+texture_normal = ExtResource("5_a2ut7")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="pick_left" to="." method="_change_avatar_left"]
+[connection signal="pressed" from="pick_right" to="." method="_change_avatar_right"]

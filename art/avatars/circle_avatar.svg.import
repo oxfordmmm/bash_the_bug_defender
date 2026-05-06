@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://druoqvdqk10ay"
-path="res://.godot/imported/defender.svg-34d1219da4eae3645f7903a5604e9982.ctex"
+uid="uid://dqpmoa8y55kne"
+path="res://.godot/imported/circle_avatar.svg-2c945ff5250cebc970bbc0f379bc79e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/defender.svg"
-dest_files=["res://.godot/imported/defender.svg-34d1219da4eae3645f7903a5604e9982.ctex"]
+source_file="res://art/avatars/circle_avatar.svg"
+dest_files=["res://.godot/imported/circle_avatar.svg-2c945ff5250cebc970bbc0f379bc79e8.ctex"]
 
 [params]
 

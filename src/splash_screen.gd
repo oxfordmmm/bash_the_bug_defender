@@ -1,5 +1,8 @@
 extends TextureRect
 
+func _ready():	
+	Global.change_avatar($avatar_sprite, 0)
+
 func _on_button_pressed() -> void:
 	var difficulty = get_node("DifficultyButton").get_selected_id()
 	match difficulty:
@@ -25,3 +28,10 @@ func _on_button_pressed() -> void:
 			Global.res_contribution = 0.05
 			Global.misuse_res_contribution = 0.15
 	get_tree().change_scene_to_file("res://scenes/single_player.tscn")
+
+
+func _change_avatar_left() -> void:
+	Global.change_avatar($avatar_sprite, -1)
+
+func _change_avatar_right() -> void:
+	Global.change_avatar($avatar_sprite, 1)

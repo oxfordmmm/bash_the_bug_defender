@@ -26,7 +26,8 @@ func reset():
 	health = starting_health
 	game_over = false
 	$CollisionShape2D.set_deferred("disabled", false)
-	$AnimatedSprite2D.set("visible", true)
+	Global.change_avatar($Sprite2D, 0)
+	$Sprite2D.set("visible", true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -46,7 +47,7 @@ func die():
 	died.emit()
 	game_over = true
 	$CollisionShape2D.set_deferred("disabled", true)
-	$AnimatedSprite2D.set("visible", false)
+	$Sprite2D.set("visible", false)
 
 func take_dmg(amount: int):
 	health -= amount

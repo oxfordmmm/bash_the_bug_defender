@@ -3,5 +3,10 @@
 Game to be played on dancemat where you need to defend the human cell from attacking bacteria.
 
 Current mechanism is firing antibiotics at invading bacteria.
-Use the bottom 3 bottoms to select antiobiotic.
+Use the bottom 3 bottoms to select antibiotic.
 Bugs will start developing resistance
+
+## Adding / Removing Avatars
+
+To add an avatar just add an image file to `art/avatars` folder. Preferablly they will be PNG or SVG files so that they have transparent background (but `jpg`/`jpeg` will also be read).
+The image will be scale to fit a 120x130 box (preserving aspect ration)
