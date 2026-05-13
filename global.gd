@@ -20,30 +20,29 @@ func _ready():
 	Global.avatar_index = randi_range(0, avatars.size() - 1)
 	scores = load_scores()
 
-# Loads all avatar textures. Strangely clunky in gdscript
 func _load_avatars(folder_path: String) -> Array[Texture2D]:
 	var result: Array[Texture2D] = []
-	var dir = DirAccess.open(folder_path)
 
-	if dir == null:
-		push_error("Could not open folder: %s" % folder_path)
-		return result
+	for entry in ResourceLoader.list_directory(folder_path):
+		print("Checking entry: %s" % entry)
+		if entry.ends_with("/"):
+			result.append_array(_load_avatars(folder_path.path_join(entry.trim_suffix("/"))))
+			continue
 
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
+		var ext := entry.get_extension().to_lower()
+		if ext in ["png", "svg", "jpg", "jpeg"]:
+			var full_path := folder_path.path_join(entry)
+			var tex := ResourceLoader.load(full_path) as Texture2D
+			if tex:
+				result.append(tex)
+			else:
+				push_warning("Failed to load avatar: %s" % full_path)
 
-	while file_name != "":
-		if not dir.current_is_dir():
-			var ext = file_name.get_extension().to_lower()
-			if ext in ["png", "svg", "jpg", "jpeg"]:
-				var full_path = folder_path.path_join(file_name)
-				result.append(load(full_path))
-		file_name = dir.get_next()
-
-	dir.list_dir_end()
 	return result
 
 func change_avatar(avatar_sprite: Sprite2D, change: int) -> void:
+	if avatars.size() == 0:
+		return # No avatars loaded, do nothing
 	Global.avatar_index = (Global.avatar_index + change + Global.avatars.size()) % Global.avatars.size()
 	avatar_sprite.texture = Global.avatars[Global.avatar_index]
 
