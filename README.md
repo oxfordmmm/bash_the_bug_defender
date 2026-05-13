@@ -7,6 +7,11 @@ Use the bottom 3 buttons to select antibiotic. Bugs will start developing resist
 The spawn rate and movement speed of the bugs, and the rate that resistance builds, depend on the difficulty 
 level chosen on the splash screen.
 
+## Downloading build
+
+A windows build (an `exe` file) is produced automatically for each release. 
+You can download them from the releases tab in github (on the right hand side).
+
 ## Scoring
 
 The game will make a file called `bash_the_bug_scores.csv` on the desktop to track scores and is used for showing high scores. It tracks player name, difficulty, and score.
