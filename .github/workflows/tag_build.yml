@@ -1,0 +1,67 @@
+name: Build Linux and Windows
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Git tag to build (must match remote exactly, e.g. 0.1.0)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout tag
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.tag }}
+          fetch-depth: 0
+
+      - name: Setup Godot 4.6.2
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.6.2
+          include-templates: true
+
+      - name: Verify Godot
+        run: godot --version
+
+      - name: Export Linux binary
+        run: |
+          mkdir -p build/linux
+          godot --headless --path . --export-release "Linux" "build/linux/BashTheBug.x86_64"
+          ls -la build/linux/
+
+      - name: Export Windows EXE
+        run: |
+          mkdir -p build/windows
+          godot --headless --path . --export-release "Windows Desktop" "build/windows/BashTheBug.exe"
+          ls -la build/windows/
+
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-${{ inputs.tag }}
+          path: build/linux/*
+          if-no-files-found: error
+
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-${{ inputs.tag }}
+          path: build/windows/BashTheBug.exe
+          if-no-files-found: error
+
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.tag }}
+          files: |
+            build/linux/*
+            build/windows/BashTheBug.exe
+          generate_release_notes: true
