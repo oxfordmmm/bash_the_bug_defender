@@ -38,20 +38,21 @@ expand_mode = 1
 
 [node name="Button" type="Button" parent="." unique_id=411615285]
 layout_mode = 0
-offset_left = 402.0
-offset_top = 535.0
-offset_right = 598.0
-offset_bottom = 590.0
+offset_left = 400.0
+offset_top = 576.0
+offset_right = 596.0
+offset_bottom = 631.0
 theme_override_font_sizes/font_size = 32
 text = "Start"
 
 [node name="DifficultyButton" type="OptionButton" parent="." unique_id=633490797]
 layout_mode = 0
-offset_left = 302.0
-offset_top = 615.0
-offset_right = 598.0
-offset_bottom = 688.0
+offset_left = 37.0
+offset_top = 616.0
+offset_right = 316.0
+offset_bottom = 671.0
 theme_override_font_sizes/font_size = 24
+alignment = 1
 selected = 0
 item_count = 4
 popup/item_0/text = "Classroom Contagion"
@@ -64,36 +65,37 @@ popup/item_3/text = "Global Pandemic"
 popup/item_3/id = 3
 
 [node name="avatar_sprite" type="Sprite2D" parent="." unique_id=434388633]
-position = Vector2(176, 452)
+position = Vector2(334, 421)
 texture = ExtResource("4_vbcv6")
 
 [node name="pick_left" type="TextureButton" parent="." unique_id=222937007]
 z_index = 1
 layout_mode = 0
-offset_left = 46.0
-offset_top = 388.0
-offset_right = 103.0
-offset_bottom = 518.0
+offset_left = 200.0
+offset_top = 352.0
+offset_right = 257.0
+offset_bottom = 482.0
 texture_normal = ExtResource("5_a2ut7")
 
 [node name="pick_right" type="TextureButton" parent="." unique_id=1122117767]
 z_index = 1
 layout_mode = 0
-offset_left = 291.0
-offset_top = 516.0
-offset_right = 348.0
-offset_bottom = 646.0
+offset_left = 469.0
+offset_top = 485.0
+offset_right = 526.0
+offset_bottom = 615.0
 rotation = 3.14159
 texture_normal = ExtResource("5_a2ut7")
 
 [node name="NameSetter" type="LineEdit" parent="." unique_id=1481301321]
 layout_mode = 0
-offset_left = 41.0
-offset_top = 532.0
-offset_right = 313.0
-offset_bottom = 587.0
+offset_left = 37.0
+offset_top = 544.0
+offset_right = 316.0
+offset_bottom = 599.0
 theme_override_font_sizes/font_size = 27
 placeholder_text = "Player Name"
+alignment = 1
 max_length = 20
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

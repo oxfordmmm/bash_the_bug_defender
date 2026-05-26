@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqpmoa8y55kne"
-path="res://.godot/imported/circle_avatar.svg-2c945ff5250cebc970bbc0f379bc79e8.ctex"
+uid="uid://bt4psfym53vg1"
+path="res://.godot/imported/Bashbug_avatar_3.png-2f83fdd56a15d0f86e6608fe6d758c47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/avatars/circle_avatar.svg"
-dest_files=["res://.godot/imported/circle_avatar.svg-2c945ff5250cebc970bbc0f379bc79e8.ctex"]
+source_file="res://art/avatars/Bashbug_avatar_3.png"
+dest_files=["res://.godot/imported/Bashbug_avatar_3.png-2f83fdd56a15d0f86e6608fe6d758c47.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
