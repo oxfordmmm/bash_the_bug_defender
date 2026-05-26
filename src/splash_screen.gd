@@ -40,6 +40,12 @@ func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/single_player.tscn")
 
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("E"):
+		_change_avatar_right()
+	elif Input.is_action_just_pressed("W"):
+		_change_avatar_left()
+
 func _change_avatar_left() -> void:
 	Global.change_avatar($avatar_sprite, -1)
 
